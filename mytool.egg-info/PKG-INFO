@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: mytool
+Version: 1.0.0
+Summary: forme
+Home-page: https://git.bitsyncdev.com/Extraskilled56/MyTool.git
+Author: my cool thing
+Author-email: zacharyj@bitsyncdev.com
+License: IDNC
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: click>=7.1.2
+
+super good readme that you can use.
