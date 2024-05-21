@@ -42,3 +42,7 @@ def uninstall(package):
         rmpkgs.run_FusionGamesXCLI()
     else:
         print("Package not found")
+        
+@cli.command()
+def version():
+    print("Version 0.5.0")
