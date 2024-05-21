@@ -4,16 +4,16 @@ with open("README.md", "r", encoding="utf-8") as fh:
 with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = fh.read()
 setup(
-    name = 'mytool',
-    version = '1.0.0',
-    author = 'my cool thing',
-    author_email = 'zacharyj@bitsyncdev.com',
-    license = 'IDNC',
-    description = 'forme',
+    name = 'Poss Package Manager',
+    version = '0.3.0',
+    author = 'Bit Sync',
+    author_email = 'software@bitsyncdev.com',
+    license = 'Apache 2.0',
+    description = 'A nice package manager coded in python',
     long_description = long_description,
     long_description_content_type = "text/markdown",
-    url = 'https://git.bitsyncdev.com/Extraskilled56/MyTool.git',
-    py_modules = ['my_tool', 'app'],
+    url = 'https://git.bitsyncdev.com/bit-sync/Poss-v2.git',
+    py_modules = ['poss', 'app'],
     packages = find_packages(),
     install_requires = [requirements],
     python_requires='>=3.7',
@@ -23,6 +23,6 @@ setup(
     ],
     entry_points = '''
         [console_scripts]
-        cooltool=my_tool:cli
+        poss=poss:cli
     '''
 )
