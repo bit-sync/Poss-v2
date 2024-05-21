@@ -1,6 +1,7 @@
 import click
 import packages as packages
 import runpkgs as runpkgs
+import rmpkgs as rmpkgs
 
 @click.group()
 def cli():
@@ -15,6 +16,8 @@ def install(package):
         packages.install_gitpython()
     elif package == 'fgxcli':
         packages.install_FusionGamesXCLI()
+    else:
+        print("Package not found")
 
 @cli.command()
 @click.argument('package')
@@ -25,3 +28,17 @@ def run(package):
         runpkgs.run_gitpython()
     elif package == 'fgxcli':
         runpkgs.run_FusionGamesXCLI()
+    else:
+        print("Package not found")
+        
+@cli.command()
+@click.argument('package')
+def uninstall(package):
+    if package == 'pycalculate':
+        rmpkgs.run_pyCalculate()
+    elif package == 'gitpython':
+        rmpkgs.run_gitpython()
+    elif package == 'fgxcli':
+        rmpkgs.run_FusionGamesXCLI()
+    else:
+        print("Package not found")

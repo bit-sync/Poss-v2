@@ -5,7 +5,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = fh.read()
 setup(
     name = 'Poss Package Manager',
-    version = '0.0.6',
+    version = '0.3.0',
     author = 'Bit Sync',
     author_email = 'software@bitsyncdev.com',
     license = 'Apache 2.0',
