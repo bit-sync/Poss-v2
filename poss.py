@@ -46,12 +46,14 @@ def uninstall(package):
         
 @cli.command()
 def version():
-    print("Version 0.5.2")
+    print("Version 0.5.3")
     
 @cli.command()
 def setup():
-    os.system("mkdir poss-installed-pkgs")
-    os.system("sudo mv poss-installed-pkgs /usr/lib")
+    os.system("mkdir poss")
+    os.system("sudo mv poss /usr/bin/")
+    os.system("mkdir installed-pkgs")
+    os.system("sudo mv installed-pkgs /usr/bin/poss")
     print("Setup complete! (please do not run this again, might cause issues)")
     
     
