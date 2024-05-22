@@ -1,7 +1,8 @@
 import click
-import packages as packages
+import inspkgs as inspkgs
 import runpkgs as runpkgs
 import rmpkgs as rmpkgs
+import os
 
 @click.group()
 def cli():
@@ -11,11 +12,11 @@ def cli():
 @click.argument('package')
 def install(package):
     if package == 'pycalculate':
-        packages.install_pyCalculate()
+        inspkgs.install_pyCalculate()
     elif package == 'gitpython':
-        packages.install_gitpython()
+        inspkgs.install_gitpython()
     elif package == 'fgxcli':
-        packages.install_FusionGamesXCLI()
+        inspkgs.install_FusionGamesXCLI()
     else:
         print("Package not found")
 
@@ -45,4 +46,12 @@ def uninstall(package):
         
 @cli.command()
 def version():
-    print("Version 0.5.0")
+    print("Version 0.5.2")
+    
+@cli.command()
+def setup():
+    os.system("mkdir poss-installed-pkgs")
+    os.system("sudo mv poss-installed-pkgs /usr/lib")
+    print("Setup complete! (please do not run this again, might cause issues)")
+    
+    
