@@ -17,15 +17,13 @@ sudo mkdir poss
 cd poss
 sudo mkdir installed-pkgs
 cd ~
-cd /usr/bin/poss
-sudo mkdir package-index
 
 ### Cloning the repository
 
 
 cd /usr/bin/poss/
 git clone -b working https://git.bitsyncdev.com/bit-sync/Poss-v2
-cd /isr/bin/poss/package-index
+cd /isr/bin/poss/Poss-v2
 git clone https://pindex.bitsyncdev.com/poss-package-index/package-index
 
 ### Installing Poss-v2
