@@ -1,7 +1,5 @@
 import click
-import packages as packages
-import runpkgs as runpkgs
-import rmpkgs as rmpkgs
+import os
 
 @click.group()
 def cli():
@@ -11,23 +9,15 @@ def cli():
 @click.argument('package')
 def install(package):
     if package == 'pycalculate':
-        packages.install_pyCalculate()
-    elif package == 'gitpython':
-        packages.install_gitpython()
-    elif package == 'fgxcli':
-        packages.install_FusionGamesXCLI()
-    else:
-        print("Package not found")
+        os.system("cd /usr/bin/poss/package-index/pycalculate")
+        os.system("sudo bash install.sh")
 
 @cli.command()
 @click.argument('package')
 def run(package):
     if package == 'pycalculate':
-        runpkgs.run_pyCalculate()
-    elif package == 'gitpython':
-        runpkgs.run_gitpython()
-    elif package == 'fgxcli':
-        runpkgs.run_FusionGamesXCLI()
+        os.system("cd /usr/bin/poss/package-index/pycalculate")
+        os.system("sudo bash run.sh")
     else:
         print("Package not found")
         
@@ -35,10 +25,22 @@ def run(package):
 @click.argument('package')
 def uninstall(package):
     if package == 'pycalculate':
-        rmpkgs.run_pyCalculate()
-    elif package == 'gitpython':
-        rmpkgs.run_gitpython()
-    elif package == 'fgxcli':
-        rmpkgs.run_FusionGamesXCLI()
+        os.system("cd /usr/bin/poss/package-index/pycalculate")
+        os.system("sudo bash remove.sh")
     else:
         print("Package not found")
+        
+@cli.command()
+def version():
+    print("Version 0.5.5")
+    
+@cli.command()
+def setup():
+    """
+    os.system("mkdir poss")
+    os.system("sudo mv poss /usr/bin/")
+    os.system("mkdir installed-pkgs")
+    os.system("sudo mv installed-pkgs /usr/bin/poss")
+    print("Setup complete! (please do not run this again, might cause issues)")
+    """
+    
