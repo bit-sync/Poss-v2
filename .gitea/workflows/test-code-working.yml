@@ -34,14 +34,14 @@ jobs:
         run: curl -fsSL https://git.bitsyncdev.com/bit-sync/Poss-v2/raw/branch/install/install-working.sh | sudo bash
       - name: Run Poss
         run: |
-        poss --help
-        poss version
-        poss install pycalculate
-        poss update pycalculate
-        poss upgrade pycalculate
-        poss uninstall pycalculate
-        poss update --poss
-        poss upgrade --poss
+         poss --help
+         poss version
+         poss install pycalculate
+         poss update pycalculate
+         poss upgrade pycalculate
+         poss uninstall pycalculate
+         poss update --poss
+         poss upgrade --poss
                   
  # deploy:
   # runs-on: ubuntu-latest
