@@ -6,7 +6,7 @@ import package_index.install as installpkg
 
 @click.group()
 def cli():
-    pass
+    pass 
 
 @cli.command()
 @click.argument('package')
