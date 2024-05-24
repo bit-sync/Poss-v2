@@ -1,12 +1,12 @@
 import click
 import os
 import sys
-sys.path.insert(1, 'package_index/install.py')
-import package_index.install as installpkg
+sys.path.insert(1, 'pindex/install.py')
+import pindex.install as installpkg
 
 @click.group()
 def cli():
-    pass
+    pass 
 
 @cli.command()
 @click.argument('package')
@@ -33,9 +33,13 @@ def uninstall(package):
         
 @cli.command()
 def version():
-    print("Version 0.5.5")
+    print("Version 0.6.0")
     
+
 @cli.command
 @click.option("-p", "--package", "package")
 def update(package): 
     pass
+
+
+    
