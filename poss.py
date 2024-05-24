@@ -1,7 +1,7 @@
 import click
 import os
 import sys
-sys.path.insert(1, 'package_index/')
+sys.path.insert(1, 'package_index/install.py')
 import package_index.install as installpkg
 
 @click.group()
@@ -11,7 +11,7 @@ def cli():
 @cli.command()
 @click.argument('package')
 def install(package):
-    installpkg(package)
+    installpkg.install(package)
 
 @cli.command()
 @click.argument('package')
