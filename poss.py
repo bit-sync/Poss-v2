@@ -41,7 +41,5 @@ def version():
 def update(package): 
     pass
 
-@cli.command()
-def setup():
-    pass
+
     
