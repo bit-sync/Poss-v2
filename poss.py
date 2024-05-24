@@ -1,6 +1,8 @@
 import click
 import os
-import 
+import sys
+sys.path.insert(1, 'package_index/')
+import package_index.install as installpkg
 
 @click.group()
 def cli():
@@ -36,4 +38,4 @@ def version():
 @cli.command
 @click.option("-p", "--package", "package")
 def update(package): 
-    
+    pass
