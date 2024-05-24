@@ -33,7 +33,7 @@ def uninstall(package):
         
 @cli.command()
 def version():
-    print("Version 0.5.5")
+    print("Version 0.6.0")
     
 
 @cli.command
