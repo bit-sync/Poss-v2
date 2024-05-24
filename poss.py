@@ -1,8 +1,8 @@
 import click
 import os
 import sys
-sys.path.insert(1, 'package_index/install.py')
-import package_index.install as installpkg
+sys.path.insert(1, 'pindex/install.py')
+import pindex.install as installpkg
 
 @click.group()
 def cli():
