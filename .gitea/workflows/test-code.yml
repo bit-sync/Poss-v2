@@ -6,7 +6,7 @@ name: print hello
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" , "working"]
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
@@ -33,8 +33,10 @@ jobs:
       - name: Install Poss
         run: curl -fsSL https://git.bitsyncdev.com/bit-sync/Poss-v2/raw/branch/install/install.sh | sudo bash
       - name: Run Poss
-        run: poss version
-                  
+        run: |
+         poss version
+         poss install pycalculate
+         poss uninstall pycalculate
  # deploy:
   # runs-on: ubuntu-latest
  #  steps:
