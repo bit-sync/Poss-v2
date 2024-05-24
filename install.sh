@@ -24,7 +24,7 @@ cd ~
 cd /usr/bin/poss/
 git clone https://git.bitsyncdev.com/bit-sync/Poss-v2
 cd /usr/bin/poss/Poss-v2
-git clone https://pindex.bitsyncdev.com/poss-package-index/package-index
+git clone https://pindex.bitsyncdev.com/poss-package-index/pindex.git
 
 
 ### Installing Poss-v2
