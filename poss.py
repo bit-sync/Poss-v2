@@ -35,7 +35,13 @@ def uninstall(package):
 def version():
     print("Version 0.5.5")
     
+
 @cli.command
 @click.option("-p", "--package", "package")
 def update(package): 
     pass
+
+@cli.command()
+def setup():
+    pass
+    
