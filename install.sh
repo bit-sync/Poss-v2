@@ -26,11 +26,6 @@ git clone https://git.bitsyncdev.com/bit-sync/Poss-v2
 cd /usr/bin/poss/Poss-v2
 git clone https://pindex.bitsyncdev.com/poss-package-index/package-index
 
-### Configuring Poss
-
-cd /usr/bin/poss
-sudo mv /package-index/install.py /usr/bin/poss/Poss-v2
-
 
 ### Installing Poss-v2
 
