@@ -38,8 +38,22 @@ def version():
 
 @cli.command
 @click.option("-p", "--package", "package")
-def update(package): 
-    pass
-
+@click.option('--poss', is_flag=True)
+def update(package, poss): 
+    if poss:
+        os.system("git fetch")
+    if package == "pycalculate":
+        os.system("sudo bash /usr/bin/pindex/pycalculate/update.sh")
+        
+@cli.command
+@click.option("-p", "--package", "package")
+@click.option('--poss', is_flag=True)
+def upgrade(package, poss): 
+    if poss:
+        os.system("git merge")
+    if package == "pycalculate":
+        os.system("sudo bash /usr/bin/pindex/pycalculate/upgrade.sh")
+    
+    
 
     
