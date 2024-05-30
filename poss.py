@@ -38,8 +38,8 @@ def version():
     
 
 @cli.command
-@click.option("-p", "--package", "package")
 @click.option('--poss', is_flag=True)
+@click.argument('package', required=False)
 def update(package, poss): 
     if poss:
         os.system("git fetch")
