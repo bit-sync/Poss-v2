@@ -17,10 +17,11 @@ def install(package):
 @click.argument('package')
 def run(package):
     if package == 'pycalculate':
-        os.system("cd /usr/bin/poss/Poss-v2/pindex/pycalculate")
+        os.system("cd /usr/bin/poss/Poss-v2/pindex/pycalculate/")
         os.system("sudo bash run.sh")
     else:
         print("Package not found")
+ 
         
 @cli.command()
 @click.argument('package')
