@@ -44,7 +44,7 @@ def update(package, poss):
     if poss:
         os.system("git fetch")
     if package == "pycalculate":
-        os.system("sudo bash /usr/bin/pindex/pycalculate/update.sh")
+        os.system("sudo bash /usr/bin/poss/Poss-v2/pindex/pycalculate/update.sh")
         
 @cli.command
 @click.option("-p", "--package", "package")
