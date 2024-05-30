@@ -21,7 +21,7 @@ def run(package):
         os.system("sudo bash run.sh")
     else:
         print("Package not found")
- 
+  
         
 @cli.command()
 @click.argument('package')
