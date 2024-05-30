@@ -27,7 +27,7 @@ def run(package):
 @click.argument('package')
 def uninstall(package):
     if package == 'pycalculate':
-        os.system("cd /usr/bin/poss/pindex/pycalculate")
+        os.system("cd /usr/bin/poss/Poss-v2/pindex/pycalculate")
         os.system("sudo bash remove.sh")
     else:
         print("Package not found")
