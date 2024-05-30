@@ -52,7 +52,7 @@ def upgrade(package, poss):
     if poss:
         os.system("git merge")
     if package == "pycalculate":
-        os.system("sudo bash /usr/bin/pindex/pycalculate/upgrade.sh")
+        os.system("sudo bash /usr/bin/poss/Poss-v2/pindex/pycalculate/upgrade.sh")
     
     
 
