@@ -13,6 +13,7 @@ def cli():
 def install(package):
     installpkg.install(package)
 
+#TODO you need to make it so it goes to the package index folder for the function instead of it being defined here!
 @cli.command()
 @click.argument('package')
 def run(package):
@@ -22,12 +23,11 @@ def run(package):
     else:
         print("Package not found")
   
-        
+#TODO you need to make it so it goes to the package index folder for the function instead of it being defined here!        
 @cli.command()
 @click.argument('package')
 def uninstall(package):
     if package == 'pycalculate':
-        os.system("cd /usr/bin/poss/Poss-v2/pindex/pycalculate")
         os.system("sudo bash /usr/bin/poss/Poss-v2/pindex/pycalculate/remove.sh")
     else:
         print("Package not found")
@@ -36,7 +36,7 @@ def uninstall(package):
 def version():
     print("Version 0.6.0")
     
-
+#TODO you need to make it so it goes to the package index folder for the function instead of it being defined here!
 @cli.command
 @click.option('--poss', is_flag=True)
 @click.argument('package', required=False)
@@ -45,7 +45,9 @@ def update(package, poss):
         os.system("git fetch")
     if package == "pycalculate":
         os.system("sudo bash /usr/bin/poss/Poss-v2/pindex/pycalculate/update.sh")
-        
+      
+#TODO you need to make it so it goes to the package index folder for the function instead of it being defined here!
+  
 @cli.command
 @click.option("-p", "--package", "package")
 @click.option('--poss', is_flag=True)
