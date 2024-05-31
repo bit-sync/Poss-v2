@@ -50,7 +50,7 @@ def update(package, poss):
         os.system("git fetch")
         print("Run `poss upgrade --poss` to upgrade your installation.")
         return 0
-    installpkg.install(package)
+    runpkg.run(package)
     
     
 #TODO Test this and fix any bugs!
