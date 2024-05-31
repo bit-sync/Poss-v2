@@ -4,7 +4,7 @@ name: Test Code
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # Triggers the workflow on push or pull request events but only for the "working" branch
   push:
     branches: [ "main" ]
   pull_request:
@@ -31,12 +31,15 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Install Poss
-        run: curl -fsSL https://git.bitsyncdev.com/bit-sync/Poss-v2/raw/branch/install/install.sh | sudo bash
+        run: curl -fsSL https://git.bitsyncdev.com/bit-sync/Poss-v2/raw/branch/install/install-working.sh | sudo bash
       - name: Run Poss
         run: |
          poss version
          poss install pycalculate
          poss uninstall pycalculate
+         poss install pycalculate
+         poss update pycalculate
+         poss upgrade pycalculate
  # deploy:
   # runs-on: ubuntu-latest
  #  steps:
