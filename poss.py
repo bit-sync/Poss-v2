@@ -39,7 +39,7 @@ def uninstall(package):
         
 @cli.command()
 def version():
-    print("Version 0.6.0")
+    print("Version 1.0.0")
     
 #TODO Test this and fix any bugs!
 @cli.command
