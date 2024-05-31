@@ -55,9 +55,7 @@ def update(package):
   
 @cli.command
 @click.argument("package")
-def upgrade(package):
-    print("updating the package index")
-    os.system("cd /usr/bin/poss/Poss-v2/pindex && sudo git pull") 
+def upgrade(package): 
     print("upgrading package")
     if package == "poss":
         os.system("cd /usr/bin/poss/Poss-v2 && sudo git merge")
