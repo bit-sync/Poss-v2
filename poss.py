@@ -34,9 +34,7 @@ def run(package):
 @cli.command()
 @click.argument('package')
 def uninstall(package):
-    if poss:
-        os.system("sudo bash /usr/bin/poss/Poss-v2/pindex/pycalculate/remove.sh")
-        return 0
+    uninstallpkg.uninstall(package)
     
         
 @cli.command()
