@@ -22,7 +22,6 @@ def install(package):
     return 0
 
 
-#TODO Test this and fix any bugs!
 @cli.command()
 @click.argument('package')
 def run(package):
@@ -30,7 +29,7 @@ def run(package):
     return 0
     
   
-#TODO Test this and fix any bugs!
+
 @cli.command()
 @click.argument('package')
 def uninstall(package):
@@ -40,8 +39,7 @@ def uninstall(package):
 @cli.command()
 def version():
     print("Version 1.0.0")
-    
-#TODO Test this and fix any bugs!
+
 @cli.command
 @click.argument('package')
 def update(package):
@@ -54,8 +52,6 @@ def update(package):
     else:
         updatepkg.update(package)
     
-    
-#TODO Test this and fix any bugs!
   
 @cli.command
 @click.argument("package")
