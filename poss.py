@@ -18,6 +18,8 @@ def cli():
 @cli.command()
 @click.argument('package')
 def install(package):
+    print("updating the package index")
+    os.system("cd /usr/bin/poss/Poss-v2/pindex && sudo git pull") 
     installpkg.install(package)
     return 0
 
@@ -38,7 +40,7 @@ def uninstall(package):
         
 @cli.command()
 def version():
-    print("Version 1.0.0")
+    print("Version 0.7.0")
 
 @cli.command
 @click.argument('package')
