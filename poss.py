@@ -2,8 +2,11 @@ import click
 import os
 import sys
 sys.path.insert(1, 'pindex/install.py')
+sys.path.insert(1, 'pindex/update.py')
+sys.path.insert(1, 'pindex/upgrade.py')
 import pindex.install as installpkg
-
+import pindex.update as updatepkg
+import pindex.upgrade as upgradepkg
 @click.group()
 def cli():
     pass 
@@ -12,6 +15,8 @@ def cli():
 @click.argument('package')
 def install(package):
     installpkg.install(package)
+    return 0
+
 
 #TODO you need to make it so it goes to the package index folder for the function instead of it being defined here!
 @cli.command()
@@ -36,27 +41,33 @@ def uninstall(package):
 def version():
     print("Version 0.6.0")
     
-#TODO you need to make it so it goes to the package index folder for the function instead of it being defined here!
+#TODO Test this and fix any bugs!
 @cli.command
 @click.option('--poss', is_flag=True)
-@click.argument('package', required=False)
+@click.argument('package')
 def update(package, poss): 
     if poss:
         os.system("git fetch")
-    if package == "pycalculate":
-        os.system("sudo bash /usr/bin/poss/Poss-v2/pindex/pycalculate/update.sh")
-      
+        print("Run `poss upgrade --poss` to upgrade your installation.")
+        return 0
+    installpkg.install(package)
+    
+    
 #TODO you need to make it so it goes to the package index folder for the function instead of it being defined here!
   
 @cli.command
 @click.option("-p", "--package", "package")
 @click.option('--poss', is_flag=True)
-def upgrade(package, poss): 
+def upgrade(poss, package):
     if poss:
         os.system("git merge")
-    if package == "pycalculate":
-        os.system("sudo bash /usr/bin/poss/Poss-v2/pindex/pycalculate/upgrade.sh")
+        return 0
+    upgradepkg.upgrade(package)
+
     
+
+    
+
     
 
     
