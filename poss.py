@@ -46,23 +46,24 @@ def version():
 @click.option('--poss', is_flag=True)
 @click.argument('package')
 def update(package, poss): 
-    if poss:
-        os.system("git fetch")
-        print("Run `poss upgrade --poss` to upgrade your installation.")
-        return 0
-    updatepkg.update(package)
+    if package == "poss":
+        os.system("cd /usr/bin/poss/Poss-v2 && sudo git fetch")
+        print("Run `poss upgrade poss` to finish updating poss")
+    else:
+        updatepkg.update(package)
     
     
 #TODO Test this and fix any bugs!
   
 @cli.command
-@click.argument("package", reqired=False)
+@click.argument("package")
 @click.option('--poss', is_flag=True)
 def upgrade(poss, package):
-    if poss:
-        os.system("git merge")
-        return 0
-    upgradepkg.upgrade(package)
+    if package == "poss":
+        os.system("cd /usr/bin/poss/Poss-v2 && sudo git merge")
+        print("Upgraded poss to new version")
+    else:
+        upgradepkg.upgrade(package)
 
     
 
