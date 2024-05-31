@@ -47,7 +47,7 @@ def version():
 def update(package):
     print("updating the package index")
     os.system("cd /usr/bin/poss/Poss-v2/pindex && sudo git pull") 
-    print("installing package")
+    print("updating package")
     if package == "poss":
         os.system("cd /usr/bin/poss/Poss-v2 && sudo git fetch")
         print("Run `poss upgrade poss` to finish updating poss")
@@ -62,7 +62,7 @@ def update(package):
 def upgrade(package):
     print("updating the package index")
     os.system("cd /usr/bin/poss/Poss-v2/pindex && sudo git pull") 
-    print("installing package")
+    print("upgrading package")
     if package == "poss":
         os.system("cd /usr/bin/poss/Poss-v2 && sudo git merge")
         print("Upgraded poss to new version")
