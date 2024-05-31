@@ -39,7 +39,8 @@ def uninstall(package):
         print("Uninstalling poss")
         os.system("sudo rm -rf /usr/bin/poss")
         print("Uninstalled poss")
-    uninstallpkg.uninstall(package)
+    else:
+        uninstallpkg.uninstall(package)
     
         
 @cli.command()
