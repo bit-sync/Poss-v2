@@ -22,7 +22,7 @@ def install(package):
     return 0
 
 
-#TODO you need to make it so it goes to the package index folder for the function instead of it being defined here!
+#TODO Test this and fix any bugs!
 @cli.command()
 @click.argument('package')
 def run(package):
@@ -33,7 +33,7 @@ def run(package):
 #TODO Test this and fix any bugs!
 @cli.command()
 @click.argument('package')
-def uninstall(package, poss):
+def uninstall(package):
     if poss:
         os.system("sudo bash /usr/bin/poss/Poss-v2/pindex/pycalculate/remove.sh")
         return 0
