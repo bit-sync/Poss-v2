@@ -5,10 +5,12 @@ sys.path.insert(1, 'pindex/install.py')
 sys.path.insert(1, 'pindex/update.py')
 sys.path.insert(1, 'pindex/upgrade.py')
 sys.path.insert(1, 'pindex/uninstall.py')
+sys.path.insert(1, 'pindex/run.py')
 import pindex.install as installpkg # type: ignore
 import pindex.update as updatepkg # type: ignore
 import pindex.upgrade as upgradepkg # type: ignore
 import pindex.uninstall as uninstallpkg # type: ignore
+import pindex.run as runpkg # type: ignore
 @click.group()
 def cli():
     pass 
@@ -24,13 +26,11 @@ def install(package):
 @cli.command()
 @click.argument('package')
 def run(package):
-    if package == 'pycalculate':
-        os.system("cd /usr/bin/poss/Poss-v2/pindex/pycalculate")
-        os.system("sudo bash run.sh")
-    else:
-        print("Package not found")
+    runpkg.run(package)
+    return 0
+    
   
-#TODO you need to make it so it goes to the package index folder for the function instead of it being defined here!        
+#TODO Test this and fix any bugs!
 @cli.command()
 @click.argument('package')
 def uninstall(package, poss):
