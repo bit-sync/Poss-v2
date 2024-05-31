@@ -35,6 +35,10 @@ def run(package):
 @cli.command()
 @click.argument('package')
 def uninstall(package):
+    if package == "poss":
+        print("Uninstalling poss")
+        os.system("sudo rm -rf /usr/bin/poss")
+        print("Uninstalled poss")
     uninstallpkg.uninstall(package)
     
         
@@ -64,11 +68,3 @@ def upgrade(package):
         print("Upgraded poss to new version")
     else:
         upgradepkg.upgrade(package)
-
-    
-
-    
-
-    
-
-    
