@@ -56,7 +56,7 @@ def update(package, poss):
 #TODO Test this and fix any bugs!
   
 @cli.command
-@click.option("-p", "--package", "package")
+@click.argument("package")
 @click.option('--poss', is_flag=True)
 def upgrade(poss, package):
     if poss:
