@@ -43,9 +43,11 @@ def version():
     
 #TODO Test this and fix any bugs!
 @cli.command
-@click.option('--poss', is_flag=True)
 @click.argument('package')
-def update(package, poss): 
+def update(package):
+    print("updating the package index")
+    os.system("cd /usr/bin/poss/Poss-v2/pindex && sudo git pull") 
+    print("installing package")
     if package == "poss":
         os.system("cd /usr/bin/poss/Poss-v2 && sudo git fetch")
         print("Run `poss upgrade poss` to finish updating poss")
@@ -57,8 +59,10 @@ def update(package, poss):
   
 @cli.command
 @click.argument("package")
-@click.option('--poss', is_flag=True)
-def upgrade(poss, package):
+def upgrade(package):
+    print("updating the package index")
+    os.system("cd /usr/bin/poss/Poss-v2/pindex && sudo git pull") 
+    print("installing package")
     if package == "poss":
         os.system("cd /usr/bin/poss/Poss-v2 && sudo git merge")
         print("Upgraded poss to new version")
