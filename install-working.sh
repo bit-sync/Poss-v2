@@ -28,7 +28,7 @@ git clone https://pindex.bitsyncdev.com/poss-package-index/pindex.git
 
 ### Installing Poss-v2
 
-cd Poss-v2
+cd /usr/bin/poss/Poss-v2
 sudo python3 setup.py develop
 
 ### Poss verifying poss is installed
