@@ -19,7 +19,8 @@ def cli():
 @click.argument('package')
 def install(package):
     print("updating the package index")
-    os.system("cd /usr/bin/poss/Poss-v2/pindex && sudo git pull") 
+    os.system("cd /usr/bin/poss/Poss-v2/pindex && sudo git pull")
+    print("installing the package") 
     installpkg.install(package)
     return 0
 
@@ -69,3 +70,9 @@ def upgrade(package):
         print("Upgraded poss to new version")
     else:
         upgradepkg.upgrade(package)
+        
+#TODO make command, "list"
+
+@cli.command()
+def list():
+    pass
