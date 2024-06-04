@@ -76,5 +76,5 @@ def upgrade(package):
 @cli.command()
 def list():
     print("Listing...")
-    os.system("cd /usr/bin/poss/installed-pkg")
+    os.system("cd /usr/bin/poss/installed-pkgs")
     os.system("ls")
