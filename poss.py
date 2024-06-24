@@ -75,4 +75,4 @@ def upgrade(package):
 
 @cli.command()
 def list():
-    pass
+    os.system("cd /usr/bin/poss/installed-pkgs && ls")
