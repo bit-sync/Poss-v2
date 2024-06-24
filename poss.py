@@ -2,8 +2,15 @@ import click
 import os
 import sys
 sys.path.insert(1, 'pindex/install.py')
-import pindex.install as installpkg
-
+sys.path.insert(1, 'pindex/update.py')
+sys.path.insert(1, 'pindex/upgrade.py')
+sys.path.insert(1, 'pindex/uninstall.py')
+sys.path.insert(1, 'pindex/run.py')
+import pindex.install as installpkg # type: ignore
+import pindex.update as updatepkg # type: ignore
+import pindex.upgrade as upgradepkg # type: ignore
+import pindex.uninstall as uninstallpkg # type: ignore
+import pindex.run as runpkg # type: ignore
 @click.group()
 def cli():
     pass 
@@ -11,49 +18,61 @@ def cli():
 @cli.command()
 @click.argument('package')
 def install(package):
+    print("updating the package index")
+    os.system("cd /usr/bin/poss/Poss-v2/pindex && sudo git pull")
+    print("installing the package") 
     installpkg.install(package)
+    return 0
+
 
 @cli.command()
 @click.argument('package')
 def run(package):
-    if package == 'pycalculate':
-        os.system("cd /usr/bin/poss/package-index/pycalculate")
-        os.system("sudo bash run.sh")
-    else:
-        print("Package not found")
-        
+    runpkg.run(package)
+    return 0
+    
+  
+
 @cli.command()
 @click.argument('package')
 def uninstall(package):
-    if package == 'pycalculate':
-        os.system("cd /usr/bin/poss/package-index/pycalculate")
-        os.system("sudo bash remove.sh")
+    if package == "poss":
+        print("Uninstalling poss")
+        os.system("sudo rm -rf /usr/bin/poss")
+        print("Uninstalled poss")
     else:
-        print("Package not found")
+        uninstallpkg.uninstall(package)
+    
         
 @cli.command()
 def version():
-    print("Version 0.6.0")
-    
+    print("Version 0.7.0")
 
 @cli.command
-@click.option("-p", "--package", "package")
-@click.option('--poss', is_flag=True)
-def update(package, poss): 
-    if poss:
-        os.system("git fetch")
-    if package == "pycalculate":
-        os.system("sudo bash /usr/bin/pindex/pycalculate/update.sh")
+@click.argument('package')
+def update(package):
+    print("updating the package index")
+    os.system("cd /usr/bin/poss/Poss-v2/pindex && sudo git pull") 
+    print("updating package")
+    if package == "poss":
+        os.system("cd /usr/bin/poss/Poss-v2 && sudo git fetch")
+        print("Run `poss upgrade poss` to finish updating poss")
+    else:
+        updatepkg.update(package)
+    
+  
+@cli.command
+@click.argument("package")
+def upgrade(package): 
+    print("upgrading package")
+    if package == "poss":
+        os.system("cd /usr/bin/poss/Poss-v2 && sudo git merge")
+        print("Upgraded poss to new version")
+    else:
+        upgradepkg.upgrade(package)
         
-@cli.command
-@click.option("-p", "--package", "package")
-@click.option('--poss', is_flag=True)
-def upgrade(package, poss): 
-    if poss:
-        os.system("git merge")
-    if package == "pycalculate":
-        os.system("sudo bash /usr/bin/pindex/pycalculate/upgrade.sh")
-    
-    
+#TODO make command, "list"
 
-    
+@cli.command()
+def list():
+    os.system("cd /usr/bin/poss/installed-pkgs && ls")
