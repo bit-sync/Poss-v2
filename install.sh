@@ -1,4 +1,4 @@
-### Installing dependencies
+echo Installing Dependencies
 
 sudo apt update
 sudo apt upgrade -y
@@ -10,7 +10,7 @@ pip install click==7.1.2
 pip install click==7.1.2 --break-system-pacakges #this is for some machines
 
 
-### Setting up files and directorys
+echo Setting up files and directorys
 
 cd /usr/bin/
 sudo mkdir poss
@@ -18,7 +18,7 @@ cd poss
 sudo mkdir installed-pkgs
 cd ~
 
-### Cloning the repository
+echo Cloning the repository
 
 
 cd /usr/bin/poss/
@@ -26,11 +26,11 @@ git clone https://git.bitsyncdev.com/bit-sync/Poss-v2
 cd /usr/bin/poss/Poss-v2
 git clone https://pindex.bitsyncdev.com/poss-package-index/pindex.git
 
-### Installing Poss-v2
+echo Installing Poss-v2
 
 cd /usr/bin/poss/Poss-v2
 sudo python3 setup.py develop
 
-### Poss verifying poss is installed
+echo Poss verifying poss is installed
 
 poss version
